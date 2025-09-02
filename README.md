@@ -15,7 +15,7 @@ Registration: PET → MRI + normalization to MNI152 space.
 2D slicing: 182×218 axial slices, discarding low-info edges → 10,824 MR–PET pairs.
 👉 Adopted 2D slices to cut computational cost and reduce overfitting.
 
-2. ⚙️ Deep Learning Model: ResU-Net
+⚙️ Deep Learning Model: ResU-Net
 Encoder–decoder U-Net backbone with residual connections
 Skip connections to preserve spatial features
 Optimized for image-to-image translation (MR → PET)
