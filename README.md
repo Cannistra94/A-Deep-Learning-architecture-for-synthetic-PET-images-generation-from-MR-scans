@@ -8,19 +8,20 @@ However, PET is costly, less accessible, and may delay patient screening.
 👉 Our goal: generate synthetic PET images from MR scans using Deep Learning.
 
 🧹 Data Cleaning & Preprocessing
-MRI bias correction (N4) to reduce intensity inhomogeneity.
-Resampling MRI & PET to 1 mm³ voxels for uniform resolution.
-Skull stripping (ANTs) to remove non-brain tissue.
-Registration: PET → MRI + normalization to MNI152 space.
-2D slicing: 182×218 axial slices, discarding low-info edges → 10,824 MR–PET pairs.
+- MRI bias correction (N4) to reduce intensity inhomogeneity.
+- Resampling MRI & PET to 1 mm³ voxels for uniform resolution.
+- Skull stripping (ANTs) to remove non-brain tissue.
+- Registration: PET → MRI + normalization to MNI152 space.
+- 2D slicing: 182×218 axial slices, discarding low-info edges → 10,824 MR–PET pairs.
+
 👉 Adopted 2D slices to cut computational cost and reduce overfitting.
 
 ⚙️ Deep Learning Model: ResU-Net
-Encoder–decoder U-Net backbone with residual connections
-Skip connections to preserve spatial features
-Optimized for image-to-image translation (MR → PET)
-Loss function: MSE + MAE (to reduce blurriness)
-Training monitored with ReduceLROnPlateau scheduler
+- Encoder–decoder U-Net backbone with residual connections
+- Skip connections to preserve spatial features
+- Optimized for image-to-image translation (MR → PET)
+- Loss function: MSE + MAE (to reduce blurriness)
+- Training monitored with ReduceLROnPlateau scheduler
 
 📊 Results
 Evaluated against ground-truth PET using standard image quality metrics:
