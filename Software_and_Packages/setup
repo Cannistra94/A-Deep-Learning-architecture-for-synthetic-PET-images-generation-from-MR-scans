@@ -1,1 +1,27 @@
+#ANTs software
+
+wget https://github.com/ANTsX/ANTs/releases/download/v2.5.2/ants-2.5.2-linux.tar.gz
+tar -xvzf ants-2.5.2-linux.tar.gz
+
+#FSL software
+wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+chmod +x fslinstaller.py
+./fslinstaller.py
+
+export FSLDIR=~/fsl
+source $FSLDIR/etc/fslconf/fsl.sh
+export PATH=$FSLDIR/bin:$PATH
+
+#Python Libraries
+
+pip install SimpleITK
+pip install nibabel
+pip install pydicom
+pip install scikit-image
+pip install numpy
+pip install pandas
+pip install matplotlib
+pip install tensorflow
+pip install scikit-learn
+
 
