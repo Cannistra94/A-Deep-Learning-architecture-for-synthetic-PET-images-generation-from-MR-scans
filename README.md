@@ -27,8 +27,8 @@ However, PET is costly, less accessible, and may delay patient screening.
 Evaluated against ground-truth PET using standard image quality metrics.
 Metric:Score
 - SSIM:0.97
-- PSNR:31.57
-- MAE:0.011
+- PSNR:31.55
+- MAE:0.010
 - MSE:0.0007
 
 ✔️ Synthetic PET images show strong similarity to real PET scans.
