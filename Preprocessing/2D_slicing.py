@@ -78,3 +78,23 @@ for i in range(num_examples):
     plt.imshow(y_slices[i], cmap='gray')
     
     plt.show()
+
+
+X_slices = []
+y_slices = []
+patient_labels = []  # To keep track of the patient index
+
+for i in range(X.shape[0]):
+    for j in range(X.shape[3]):  # Discard the first and last ten slices
+        X_slices.append(X[i, :, :, j])
+        y_slices.append(y[i, :, :, j])
+        patient_labels.append(i)  # Append patient index
+
+# Convert lists to numpy arrays
+X_slices = np.array(X_slices)
+y_slices = np.array(y_slices)
+patient_labels = np.array(patient_labels)
+
+print(f"X_slices shape: {X_slices.shape}")  
+print(f"y_slices shape: {y_slices.shape}")
+print(f"patient_labels shape: {patient_labels.shape}")
