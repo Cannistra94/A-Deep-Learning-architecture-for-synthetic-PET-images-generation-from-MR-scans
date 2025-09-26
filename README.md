@@ -37,7 +37,7 @@ Metric:Score (Averaged across 10-Folds)
 Novel application of ResU-Net for PET synthesis in brain tumors
 Data standardization, cleaning & preprocessing pipeline
 Robust validation with 10-fold cross-validation approach
-Evaluation of synthetic PET's quality with several metrics
+Quantitative evaluation of synthetic PET's quality, as compared with real PET, with standard image quality metrics
 Deep learning methodologies can reduce dependency on costly and limited PET scans
 
 
