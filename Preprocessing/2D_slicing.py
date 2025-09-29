@@ -85,7 +85,7 @@ y_slices = []
 patient_labels = []  # To keep track of the patient index
 
 for i in range(X.shape[0]):
-    for j in range(X.shape[3]):  # Discard the first and last ten slices
+    for j in range(X.shape[3]):  
         X_slices.append(X[i, :, :, j])
         y_slices.append(y[i, :, :, j])
         patient_labels.append(i)  # Append patient index
