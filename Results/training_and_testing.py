@@ -114,3 +114,24 @@ for train_idx, test_idx in kfold.split(X_slices):
 
         # Print metrics for the current fold on test set
         print(f"Test set metrics - Fold {fold_idx}: MAE: {mae_test}, MSE: {mse_test}, PSNR: {psnr_test}, SSIM: {ssim_test}")
+
+
+
+# Average and standard deviation metrics across folds on the test set
+avg_mae_test = np.mean(mae_scores)
+std_mae_test = np.std(mae_scores)
+
+avg_mse_test = np.mean(mse_scores)
+std_mse_test = np.std(mse_scores)
+
+avg_psnr_test = np.mean(psnr_scores)
+std_psnr_test = np.std(psnr_scores)
+
+avg_ssim_test = np.mean(ssim_scores)
+std_ssim_test = np.std(ssim_scores)
+
+print("\nAverage Metrics Across 5 Folds - Test Set:")
+print(f"Average MAE: {avg_mae_test:.4f} ± {std_mae_test:.4f}")
+print(f"Average MSE: {avg_mse_test:.4f} ± {std_mse_test:.4f}")
+print(f"Average PSNR: {avg_psnr_test:.4f} ± {std_psnr_test:.4f}")
+print(f"Average SSIM: {avg_ssim_test:.4f} ± {std_ssim_test:.4f}")
