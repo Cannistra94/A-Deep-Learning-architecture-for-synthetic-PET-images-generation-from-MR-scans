@@ -24,3 +24,9 @@ def ssim_metric(y_true, y_pred):
     # Ensure y_pred has the same shape as y_true
     y_pred = tf.squeeze(y_pred, axis=-1)  # Remove the last channel dimension from y_pred
     return tf.image.ssim(y_true, y_pred, max_val=1.0)
+
+# Define custom combined loss function
+def combined_mae_mse_loss(y_true, y_pred):
+    mae_loss = MeanAbsoluteError()(y_true, y_pred)
+    mse_loss = MeanSquaredError()(y_true, y_pred)
+    return 0.5 * mae_loss + 0.5 * mse_loss
